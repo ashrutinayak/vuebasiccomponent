@@ -13,6 +13,25 @@ export default {
     return {
       //   msg: ["Hello vue!!!!!!!!!!!!!!!", "Good Morning", "Testing"]
     };
+  },
+  //   Life cycle hook
+  beforeCreate() {
+    alert("BeforeCreate");
+  },
+  created() {
+    alert("Created");
+  },
+  beforeMount() {
+    alert("BeforeMount");
+  },
+  mounted() {
+    alert("Mounted");
+  },
+  beforeUpdate() {
+    alert("BeforeUpdate");
+  },
+  update() {
+    alert("Update");
   }
 };
 </script>
