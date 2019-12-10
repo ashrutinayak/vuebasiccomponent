@@ -1,8 +1,8 @@
 <template>
   <div>
-    <app-header></app-header>
+    <app-header v-bind:name="name" v-on:changename="updatename($event)"></app-header>
     <app-msg v-bind:msg="msg"></app-msg>
-    <app-footer></app-footer>
+    <app-footer v-bind:name="name"></app-footer>
   </div>
 </template>
 
@@ -14,8 +14,14 @@ export default {
   components: { "app-header": Titles, "app-footer": footer, "app-msg": msg },
   data() {
     return {
-      msg: ["Hello vue!!!!!!!!!!!!!!!", "Good Morning", "Testing"]
+      msg: ["Hello vue!!!!!!!!!!!!!!!", "Good Morning", "Testing"],
+      name: "Demo"
     };
+  },
+  methods: {
+    updatename: function(nameupdate) {
+      this.name = nameupdate;
+    }
   }
 };
 </script>
