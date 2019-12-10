@@ -3,12 +3,18 @@
 </template>
 
 <script>
+import { bus } from "../main";
 export default {
   props: ["name"],
   data() {
     return {
       copyright: "Copyright @2019"
     };
+  },
+  created() {
+    bus.$on("changename", data => {
+      this.name = data;
+    });
   }
 };
 </script>

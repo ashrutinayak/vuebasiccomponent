@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { bus } from "../main";
 export default {
   props: ["name"],
   data() {
@@ -19,7 +20,9 @@ export default {
   },
   methods: {
     changename: function() {
-      this.$emit("changename", "Testing Demo");
+      //   this.$emit("changename", "Testing Demo");
+      this.name = "Testing";
+      bus.$emit("changename", "Testing");
     }
   }
 };
